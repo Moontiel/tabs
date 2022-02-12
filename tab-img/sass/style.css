@@ -1,0 +1,298 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header,
+footer {
+  text-align: center;
+  background-color: cadetblue;
+  color: #fff;
+  height: 160px;
+}
+
+/*
+  section_name: contenedor definido para implementar
+  margin o padding con el fin de separar las secciones
+  entre si
+*/
+.section_name {
+  padding: 50px 0;
+  /*
+  	container_name: contenedor definido para manejar
+  	el responsive implementando width
+  */
+}
+.section_name .container_name {
+  width: 80%;
+  margin: 0 auto;
+  /*
+            flexbox_name
+        */
+}
+.section_name .container_name .flexbox_name {
+  /*
+  	@query 768px ==> : definimos flexbox y su 
+  	propiedad space-between para generar espaciado
+  	entre los elementos que este contiene
+  */
+  /*
+               tab_header
+           */
+  /*
+               tab_body
+           */
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.section_name .container_name .flexbox_name .tab_header {
+  /*
+  	@query 768px ==> : definimos width: 50% para que ocupe
+  	ese espacio dentro de su contenedor padre
+  */
+  /*
+  	seleccionamos el primer hijo de tab_header y 
+  	le añadimos un borde
+  */
+  /*
+                  tab_content_header: importante definirle 
+  	position: relative ya que la clase js_header_active 
+  	tiene definido position: absolute
+              */
+  /*
+  	js_header_active: clase añadida con javascript que
+  	implementa la pseudo clase ::before con la que 
+  	vamos a crear un borde en la parte izquierda del 
+  	tab_content_header haciendo uso de la propiedad
+  	position: absolute recordemos que es display: block 
+  	junto con background-color quienes nos permiten 
+  	visualizar el borde
+  */
+  /*
+  	tab_content_img
+  */
+  /*
+  	js_img_hidden
+  */
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name .tab_header {
+    width: 50%;
+  }
+}
+.section_name .container_name .flexbox_name .tab_header .tab_header:first-child {
+  border-top: 1px solid #ccc;
+}
+.section_name .container_name .flexbox_name .tab_header .tab_content_header {
+  position: relative;
+  cursor: pointer;
+  /*
+  	@query 768px ==> : definimos flexbox y sus propiedades
+  	justify-content, align-items para poner los elementos
+  	en linea y centrarlos verticalmente
+  */
+  /*
+  	tab_img: definimos un width y un height mas la
+  	propiedad object-fit: cover para ajustar la imagen
+  	al contenedor padre
+  */
+  /*
+  	tab_info
+  */
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name .tab_header .tab_content_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    padding: 16px 10px 16px 30px;
+  }
+}
+.section_name .container_name .flexbox_name .tab_header .tab_content_header img {
+  width: 100%;
+  height: 120px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /*
+  	@query 768px ==> : cambiamos el width de la img
+  	para que ocupe ese espacio dentro de su contenedor 
+  	padre
+  */
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name .tab_header .tab_content_header img {
+    width: 45%;
+  }
+}
+.section_name .container_name .flexbox_name .tab_header .tab_content_header .tab_info {
+  /*
+  	@query 768px ==> : cambiamos el width de tag_info
+  	para en esta medida responsive
+  */
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name .tab_header .tab_content_header .tab_info {
+    width: 50%;
+  }
+}
+.section_name .container_name .flexbox_name .tab_header .tab_content_header .tab_info p {
+  margin: 12px 0;
+}
+.section_name .container_name .flexbox_name .tab_header .js_header_active::before {
+  content: "";
+  position: absolute;
+  display: block;
+  background-color: pink;
+  /*
+  	@query 767px <== : haciendo uso de las propiedades
+  	left, right y bottom posicionamos el borde en la
+  	parte inferior de tab_content_header, finalmente
+  	debemos definir un height para que sea visible
+  */
+  /*
+  	@query 768px ==> : haciendo uso de las propiedades
+  	top, left y bottom posicionamos el borde en la
+  	parte izquierda de tab_content_header, finalmente
+  	debemos definir un width para que sea visible
+  */
+}
+@media (max-width: 767px) {
+  .section_name .container_name .flexbox_name .tab_header .js_header_active::before {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 16px;
+  }
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name .tab_header .js_header_active::before {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 16px;
+  }
+}
+.section_name .container_name .flexbox_name .tab_header .tab_content_img {
+  /*
+  	@query 767px <== : definimos un margen para 
+  	separar las cajas
+  */
+  /*
+  	@query 768px ==> : removemos este contenedor del
+  	viewport
+  */
+  /*
+  	tab_img
+  */
+}
+@media (max-width: 767px) {
+  .section_name .container_name .flexbox_name .tab_header .tab_content_img {
+    margin-bottom: 20px;
+  }
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name .tab_header .tab_content_img {
+    display: none;
+  }
+}
+.section_name .container_name .flexbox_name .tab_header .tab_content_img img {
+  /*
+  	@query 767px <== : definimos un width y un height 
+  	mas la propiedad object-fit: cover para ajustar 
+  	la imagen al contenedor padre
+  */
+}
+@media (max-width: 767px) {
+  .section_name .container_name .flexbox_name .tab_header .tab_content_img img {
+    width: 100%;
+    height: 300px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.section_name .container_name .flexbox_name .tab_header .js_img_hidden {
+  /*
+  	@query 767px <== : clase añadida con javascript que
+  	nos permite ocultar el contenedor tab_content_img
+  */
+}
+@media (max-width: 767px) {
+  .section_name .container_name .flexbox_name .tab_header .js_img_hidden {
+    display: none;
+  }
+}
+.section_name .container_name .flexbox_name .tab_body {
+  /*
+  	@query 767px <== : removemos este contenedor del
+  	viewport
+  */
+  /*
+  	@query 768px ==> : le definimos width: 47% para que ocupe
+  	ese espacio dentro de su contenedor padre
+  */
+  /*
+  	tab_content_body
+  */
+  /*
+  	js_header_active
+  */
+}
+@media (max-width: 767px) {
+  .section_name .container_name .flexbox_name .tab_body {
+    display: none;
+  }
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name .tab_body {
+    width: 47%;
+  }
+}
+.section_name .container_name .flexbox_name .tab_body .tab_content_body {
+  /*
+  	@query 768px ==> : es importante definirle un heigh: 100%
+  	para que tome el alto total de su contenedor padre
+  */
+  /*
+  	tag-img
+  */
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name .tab_body .tab_content_body {
+    height: 100%;
+  }
+}
+.section_name .container_name .flexbox_name .tab_body .tab_content_body img {
+  /*
+  	@query 768px ==> : definimos width y height mas la 
+  	propiedad object-fit para ajustar la imagen al contenedor
+  */
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name .tab_body .tab_content_body img {
+    width: 100%;
+    height: 80%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.section_name .container_name .flexbox_name .tab_body .tab_content_body h2 {
+  margin: 12px 0;
+}
+.section_name .container_name .flexbox_name .tab_body .js_body_hidden {
+  /*
+  	@query 768px ==> : clase añadida con javascript que
+  	nos permite ocultar el contenedor tab_body
+  */
+}
+@media (min-width: 768px) {
+  .section_name .container_name .flexbox_name .tab_body .js_body_hidden {
+    display: none;
+  }
+}/*# sourceMappingURL=style.css.map */

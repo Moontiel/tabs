@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Tab img</title>
+		<link rel="stylesheet" href="./sass/style.css" />
+	</head>
+
+	<body>
+		<header>header</header>
+
+		<!--  
+        	section_name: contenedor de la seccion
+    	-->
+		<div class="section_name">
+			<!--  
+				container_name: contenedor encargado
+				del responsive
+			-->
+			<div class="container_name">
+				<!--  
+					flexbox_name: contenedor definido
+					para implementar flebox, contiene a 
+					tab_header y tab_body
+				-->
+				<div class="flexbox_name">
+					<!-- 
+						tab_header: contenedor de tab_content_header y tab
+						content_img
+					-->
+					<div class="tab_header">
+						<!-- 
+							tab_content_header: contiene una tag-img y una caja
+							tab_info, esta misma clase es implemenatda para uso
+							en javascript desde donde le añadimos o removemos
+							la clase js_header_active
+						-->
+						<div class="tab_content_header js_header_active">
+							<img src="./assets/img/img-min-1.jpg" alt="img1" />
+
+							<!--  
+								tab_info: caja que contiene los elementos que
+								conforman la parte superior de la tab
+							-->
+							<section class="tab_info">
+								<h2>Gatos</h2>
+
+								<p>
+									Los gatos dolor sit amet consectetur adipisicing elit.
+									Recusandae obcaecati iure quaerat consectetur ipsa! Provident
+									aliquid, in consequuntur ipsam, dolorem fugiat aperiam, labore
+									unde temporibus ea quo doloribus quidem eum!
+								</p>
+
+								<a href="#">Leer Mas</a>
+							</section>
+						</div>
+
+						<!-- 
+							tab_content_img: contiene una tag-img, esta caja
+							se definio para ahustar el diseño a dispositivos
+							moviles, esta misma clase es implementada en javascript
+							desde donde le añadimos o removemos la clase
+							js_img_hidden
+						-->
+						<div class="tab_content_img">
+							<img src="./assets/img/img-min-1.jpg" alt="img1" />
+						</div>
+
+						<div class="tab_content_header">
+							<img src="./assets/img/img-min-4.jpg" alt="img2" />
+
+							<section class="tab_info">
+								<h2>Lobos</h2>
+
+								<p>
+									Los lobos dolor sit amet consectetur adipisicing elit.
+									Recusandae obcaecati iure quaerat consectetur ipsa! Provident
+									aliquid, in consequuntur ipsam, dolorem fugiat aperiam, labore
+									unde temporibus ea quo doloribus quidem eum!
+								</p>
+
+								<a href="#">Leer Mas</a>
+							</section>
+						</div>
+						
+						<div class="tab_content_img js_img_hidden">
+							<img src="./assets/img/img-min-4.jpg" alt="img1" />
+						</div>
+
+						<div class="tab_content_header">
+							<img src="./assets/img/img-min-8.jpg" alt="img3" />
+
+							<section class="tab_info">
+								<h2>Tigres</h2>
+
+								<p>
+									Los tigres dolor sit amet consectetur adipisicing elit.
+									Recusandae obcaecati iure quaerat consectetur ipsa! Provident
+									aliquid, in consequuntur ipsam, dolorem fugiat aperiam, labore
+									unde temporibus ea quo doloribus quidem eum!
+								</p>
+
+								<a href="#">Leer Mas</a>
+							</section>
+						</div>
+
+						<div class="tab_content_img js_img_hidden">
+							<img src="./assets/img/img-min-8.jpg" alt="img1" />
+						</div>
+					</div>
+
+					<!-- 
+						tab_body: contenedor de tab_content_body
+					-->
+					<div class="tab_body">
+						<!--  
+							tab_content_body: contiene los elementos que conforman
+                            el cuerpo de la tab, esta misma clase es implementada
+                            en javascript desde donde le añadimos o removemos a 
+                            este contenedor la clase js_body_hidden
+						-->
+						<div class="tab_content_body">
+							<img src="./assets/img/img-min-1.jpg" alt="img1" />
+
+							<h2>Gatos</h2>
+
+							<p>
+								Los gatos dolor sit amet consectetur adipisicing elit.
+								Recusandae obcaecati iure quaerat consectetur ipsa! Provident
+								aliquid, in consequuntur ipsam, dolorem fugiat aperiam, labore
+								unde temporibus ea quo doloribus quidem eum!
+							</p>
+						</div>
+
+						<div class="tab_content_body js_body_hidden">
+							<img src="./assets/img/img-min-4.jpg" alt="img1" />
+
+							<h2>Lobos</h2>
+
+							<p>
+								Los lobos dolor sit amet consectetur adipisicing elit.
+								Recusandae obcaecati iure quaerat consectetur ipsa! Provident
+								aliquid, in consequuntur ipsam, dolorem fugiat aperiam, labore
+								unde temporibus ea quo doloribus quidem eum!
+							</p>
+						</div>
+
+						<div class="tab_content_body js_body_hidden">
+							<img src="./assets/img/img-min-8.jpg" alt="img1" />
+
+							<h2>Tigres</h2>
+
+							<p>
+								Los tigres dolor sit amet consectetur adipisicing elit.
+								Recusandae obcaecati iure quaerat consectetur ipsa! Provident
+								aliquid, in consequuntur ipsam, dolorem fugiat aperiam, labore
+								unde temporibus ea quo doloribus quidem eum!
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>footer</footer>
+
+		<script src="./js/main.js"></script>
+	</body>
+</html>

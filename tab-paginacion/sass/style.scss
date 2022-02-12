@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header, footer {
+  text-align: center;
+  background-color: #4c6067;
+  color: #fff;
+  height: 80px;
+  // text-rendering: optimizeLegibility;
+}
+
+/*
+  section_name: contenedor definido para implementar
+  margin o padding con el fin de separar las secciones
+  entre si
+*/
+.section_name {
+  padding: 50px 0;
+
+  /*
+    container_name: contenedor definido para manejar
+    el responsive implementando width
+  */
+  .container_name {
+    margin: 0 auto;
+    
+    /*
+      @query de 899px <=== : definimos un width
+      responsive en esta medida
+    */
+    @media (max-width: 899px) {
+      width: 90%;
+    }
+
+    /*
+      @query de 900px ===> : definimos un width
+      responsive en esta medida
+    */
+    @media (min-width: 900px) {
+      width: 70%;
+    }
+
+    /*
+      content_flexbox: contenedor definido para
+      implementar flebox si se requiere
+    */
+    .flexbox_name {
+
+      /*
+        box_name
+      */
+      .box_name {
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        padding: 20px;
+
+        /*
+          tag-ul: le definimos display flex para poner sus
+          elementos en linea
+        */
+        ul {
+          display: flex;
+
+          /*
+            tag-li: la convertimos en un boton para eso le 
+            definimos un display: inline-flex mas las propiedades 
+            width, justify-content, height, align-items que dan 
+            centran su contenido horizontal y verticalmente
+          */
+          li {
+            list-style: none;
+            display: inline-flex;
+            width: 120px;
+            justify-content: center;
+            height: 30px;
+            align-items: center;
+            color: #4c6067;
+            border: 1px solid #4c6067;
+            border-radius: 3px;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: 0.2s;
+            
+            /*
+              js_li_active: clase añadida con javascript
+            */
+            &.js_li_active {
+              background-color: #4c6067;
+              color: #ebfaff;
+              border: none;
+            }
+          }
+        }
+
+        /*
+          tab_body
+        */
+        .tab_body {
+
+          /*
+            tab_content
+          */
+          .tab_content {
+
+            /*
+              tag-h2: le definimos una animacion smoothTop
+            */
+            h2 {
+              color: #404648;
+              margin-top: 30px;
+              animation-name: smoothTop;
+              animation-duration: 0.3s;
+
+              /*
+                animacion smoothTop: al 0% la trasladamos en el 
+                eje Y 7% hacia abajo con una transparencia suave
+                cuando llega al 100% lo devolvemos a su posicion 
+                inicial con un opacity: 1 osea visible
+              */
+              @keyframes smoothTop {
+                0% {
+                  opacity: 0.2;
+                  transform: translateY(7%);
+                }
+                100% {
+                  opacity: 1;
+                  transform: translateY(0%);
+                }
+              }
+            }
+
+            /*
+              tag-p: le definimos una animacion smoothBottom
+            */
+            p {
+              color: #404648;
+              line-height: 22px;
+              margin: 20px 0;
+              animation-name: smoothBottom;
+              animation-duration: 0.7s;
+
+              /*
+                animacion smoothBottom: al 0% la trasladamos en el 
+                eje Y -3% hacia arriba con una transparencia suave
+                cuando llega al 100% lo devolvemos a su posicion 
+                inicial con un opacity: 1 osea visible
+              */
+              @keyframes smoothBottom {
+                0% {
+                  opacity: 0.2;
+                  transform: translateY(-3%);
+                }
+                100% {
+                  opacity: 1;
+                  transform: translateY(0%);
+                }
+              }
+            }
+          }
+
+          /*
+            js_li_active: clase añadida con javascript
+          */
+          .js_content_hidden {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
