@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    text-align: center;
+    background-color: cadetblue;
+    color: #fff;
+    height: 80px;
+}
+
+/*
+  section_name: contenedor definido para implementar
+  margin o padding con el fin de separar las secciones
+  entre si
+*/
+.section_name {
+    padding: 50px 0;
+
+    /*
+        container_name: contenedor definido para manejar
+        el responsive implementando width
+    */
+	.container_name {
+
+        /*
+            content_flexbox: contenedor definido para
+            implementar flebox si se requiere
+        */
+		.flexbox_name {
+            /*
+                @query de 1000px ===> : definimos display: grid
+                y creamos una grilla de 2 columnas y que cada una
+                ocupe el 50% de ancho de su contenedor padre
+                responsive en esta medida
+            */
+            @media (min-width: 1000px) {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            /*
+                content_name: definimos un padding para separar el
+                contenido de los bordes
+            */   
+            .content_name {
+                    background-color: #313338;
+                    padding: 30px;
+
+                    /*
+                        @query de 768px ===> : cambiamos el
+                        espaciado de content_name
+                    */
+                    @media (min-width: 768px) {
+                        padding: 70px 50px;
+                    }
+
+                    /*
+                        tag-h1
+                    */
+                    h1 {
+                        color: #fff;
+                        font-size: 55px;
+                        line-height: 1;
+                    }
+    
+                    /*
+                        tag-p
+                    */
+                    p {
+                        color: #d1d1d1;
+                        font-size: 18px;
+                        line-height: 26px;
+    
+                        /*
+                            nth-child: seleccionamos el segundo elemento
+                            y le definimos margen
+                        */
+                        &:nth-child(2) {
+                            margin: 50px 0 20px;
+                        }
+                    }
+            }
+
+            /*
+                tag-ul: definimos flexbox para poner en linea los elementos que
+                esta etiqueta contiene
+            */
+            ul {
+                display: flex;
+                
+                /*
+                    tag-li: para generar el efecto de tab scroll es importante 
+                    definir la propiedad flex: 1 para que los elemntos ocupen
+                    todo el espacio generado en el contenedor por flexbox
+                */
+                li {
+                    list-style: none;
+                    flex: 1;
+                    transition: flex .5s ease-in-out;
+
+                    /*
+                        cuando hacemos :hover sobre la tag-li cambiamos el
+                        valor de la propiedad flex a 100% para que genere
+                        el efecto tab hover
+                    */
+                    &:hover {
+                        flex: 100%;
+                    }
+
+                    /*
+                        tag-img: la propiedad vertical-align: top elimina
+                        un paddin generado por el navegador en las imagenes
+                        definimos un width y height que tome el ancho y alto
+                        total de su contenedor padre, finalmente 
+                        object-fit: cover para ajustar la imagen este
+                    */
+                    img {
+                        vertical-align: top;
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+	}
+}
